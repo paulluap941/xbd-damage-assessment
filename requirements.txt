@@ -1,0 +1,22 @@
+# xBD building damage assessment
+#
+# PyTorch with CUDA support is not distributed through PyPI. For a GPU setup,
+# install the matching build from https://pytorch.org first and this file after:
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+#   pip install -r requirements.txt
+
+torch>=2.1
+torchvision>=0.16          # required by segmentation-models-pytorch
+
+numpy>=1.26
+pillow>=10.0
+matplotlib>=3.8
+
+shapely>=2.0               # notebook 1: reading the label polygons
+scikit-image>=0.22         # notebook 1: rasterizing them (polygon2mask)
+
+segmentation-models-pytorch>=0.3.3   # notebooks 4 and 5: ResNet34 encoder
+
+jupyterlab>=4.0
+ipykernel>=6.25

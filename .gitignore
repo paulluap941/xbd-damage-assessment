@@ -1,0 +1,28 @@
+# models and tile sets are too large for the repository
+checkpoints/*.pt
+val_tiles/*.pt
+
+# raw data
+data/
+
+# full image predictions, notebook 5 writes them, a sample is checked in
+predictions/hold/*
+!predictions/hold/guatemala-volcano_*
+!predictions/hold/hurricane-*
+!predictions/hold/midwest-flooding_*
+!predictions/hold/palu-tsunami_*
+!predictions/hold/santa-rosa-wildfire_*
+!predictions/hold/socal-fire_*
+
+# notebook and python artifacts
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# exported figures
+figures/*.png
+figures/*.pdf
+
+.DS_Store
