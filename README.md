@@ -5,12 +5,8 @@ University of Potsdam.
 
 For every location the [xBD dataset](https://xview2.org/) has two satellite
 images, one before and one after a disaster. Two questions follow from that:
-where are the buildings, and how badly is each one damaged. Scoring uses the
-official xView2 formula.
+where are the buildings, and how badly is each one damaged.
 
-The difficulty is the imbalance. 94 % of all pixels are background, and of the
-building pixels three quarters are undamaged, so a model that predicts nothing
-is already right most of the time.
 
 ## Notebooks
 
@@ -39,7 +35,7 @@ All 933 images of the holdout split, at full size, with a sliding window:
 | Siamese U-Net | 0.815 | 0.464 | 0.609 | 0.744 | 0.628 | 0.862 | 0.698 |
 | U-Net, six stacked channels | 0.801 | 0.452 | 0.629 | 0.717 | 0.621 | 0.862 | 0.693 |
 
-`score = 0.3 * F1_localization + 0.7 * F1_damage`, where `F1_damage` is the
+`score (from xview2-challenge) = 0.3 * F1_localization + 0.7 * F1_damage`, where `F1_damage` is the
 harmonic mean of the four damage classes. The baseline published with the
 dataset reaches a weighted damage F1 of 0.27 (Gupta et al., 2019).
 
@@ -101,13 +97,6 @@ every notebook is scored on exactly the same crops. They keep the raw 0 to 4
 target and the format is decided on access, so the three class and five class
 models see identical data.
 
-**Pixel metrics.** Everything is counted over pixels. The competition scores per
-building polygon, so these numbers compare among themselves but not against the
-leaderboard.
-
-**Held out events.** Splitting by image leaves the same disasters on both sides.
-Splitting by event is the harder and more honest question, and the gap between
-the two tables above is what that costs.
 
 ## Dataset
 
