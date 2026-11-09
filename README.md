@@ -8,6 +8,11 @@ images, one before and one after a disaster. Two questions follow from that:
 where are the buildings, and how badly is each one damaged.
 
 
+![Two holdout images: before, after, the ground truth damage labels and the ensemble prediction](img/examples.jpg)
+
+*Two holdout images, left to right: before the disaster, after it, the ground truth damage
+labels, and what the ensemble predicts. Both overlays are drawn on the post-disaster image.*
+
 ## Notebooks
 
 | # | notebook | |
