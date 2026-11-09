@@ -5,14 +5,8 @@ val_tiles/*.pt
 # raw data
 data/
 
-# full image predictions, notebook 5 writes them, a sample is checked in
-predictions/hold/*
-!predictions/hold/guatemala-volcano_*
-!predictions/hold/hurricane-*
-!predictions/hold/midwest-flooding_*
-!predictions/hold/palu-tsunami_*
-!predictions/hold/santa-rosa-wildfire_*
-!predictions/hold/socal-fire_*
+# full image predictions, notebook 5 writes them
+predictions/
 
 # notebook and python artifacts
 .ipynb_checkpoints/
