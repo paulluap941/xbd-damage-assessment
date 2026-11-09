@@ -11,7 +11,7 @@ where are the buildings, and how badly is each one damaged.
 ![Two holdout images: before, after, the ground truth damage labels and the ensemble prediction](img/examples.jpg)
 
 *Two holdout images, left to right: before the disaster, after it, the ground truth damage
-labels, and what the ensemble predicts. Both overlays are drawn on the post-disaster image.*
+labels, and what the ensemble (final-model) predicts.*
 
 ## Notebooks
 
@@ -26,8 +26,7 @@ labels, and what the ensemble predicts. Both overlays are drawn on the post-disa
 
 Notebook 1 has to run once, it writes the target images for the Tier3 split,
 which xBD ships only as label polygons. After that the order does not matter.
-Nothing is retrained and nothing is recomputed that is already on disk, so a
-second run takes seconds.
+Nothing is retrained and nothing is recomputed that is already on disk.
 
 ## Results
 
@@ -40,9 +39,10 @@ All 933 images of the holdout split, at full size, with a sliding window:
 | Siamese U-Net | 0.815 | 0.464 | 0.609 | 0.744 | 0.628 | 0.862 | 0.698 |
 | U-Net, six stacked channels | 0.801 | 0.452 | 0.629 | 0.717 | 0.621 | 0.862 | 0.693 |
 
+The baseline published with the dataset reaches a weighted damage F1 of 0.27 (Gupta et al., 2019).
+
 `score (from xview2-challenge) = 0.3 * F1_localization + 0.7 * F1_damage`, where `F1_damage` is the
-harmonic mean of the four damage classes. The baseline published with the
-dataset reaches a weighted damage F1 of 0.27 (Gupta et al., 2019).
+harmonic mean of the four damage classes. 
 
 Train, test and holdout all contain the same ten events, so even the holdout
 number describes disasters the models have seen. Notebook 6 removes three events
