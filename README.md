@@ -71,7 +71,7 @@ common/
 checkpoints/       trained models, not in the repository
 val_tiles/         fixed validation tiles, not in the repository
 results/           counts of the full image evaluations
-predictions/       full image predictions, not in the repository
+predictions/       full image predictions
 ```
 
 A notebook holds what makes that notebook, everything shared is imported.
